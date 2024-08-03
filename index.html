@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Couples See Each Other</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-r from-pink-400 to-purple-500 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="container mx-auto bg-white rounded-lg shadow-lg p-8 max-w-4xl">
+        <h1 class="text-4xl font-bold text-center mb-4 text-purple-700">How Couples See Each Other</h1>
+        <p class="text-center mb-8 text-gray-600">Based on the TikTok trend, I have created this project so that couples can easily share with each other how they see themselves. How she sees me and how he sees me. Have fun lovebirds!</p>
+        <div id="matrix" class="grid grid-cols-3 gap-4 mb-8 relative">
+            <!-- Matrix cells will be dynamically added here -->
+            <div id="watermark" class="absolute text-center w-full opacity-70 pointer-events-none" style="top: 32%; left: 0%;">
+                <span>A project by kevinleonjouvin.com </span>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <button id="downloadBtn" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded hidden" disabled>
+                Download Image
+            </button>
+        </div>
+    </div>
+    <!-- Image upload modal -->
+    <div id="uploadModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg max-w-2xl w-full">
+            <h2 class="text-2xl font-bold mb-4">Upload Image</h2>
+            <input type="file" id="imageUpload" accept="image/jpeg, image/png" class="mb-4">
+            <div id="cropperContainer" class="mb-4 hidden">
+                <img id="cropperImage" src="" alt="Image to crop">
+            </div>
+            <div class="flex justify-between">
+                <button id="cancelUpload" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                    Cancel
+                </button>
+                <button id="confirmUpload" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-8 text-center text-white">
+        <p>A project by <a href="https://kevinleonjouvin.com" target="_blank" class="underline">kevinleonjouvin.com</a></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
